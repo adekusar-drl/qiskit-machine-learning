@@ -215,7 +215,19 @@ class SamplerQNN(NeuralNetwork):
 
         # derive target values to be used in computations
         self._output_shape = self._compute_output_shape(interpret, output_shape)
-        self._interpret = interpret if interpret is not None else lambda x: x
+        self._interpret = interpret if interpret is not None else self._default_interpret
+
+    def _default_interpret(self, x):
+        """
+        The default identity interpret function that is used when no interpret is passed.
+
+        Args:
+            x: a value to interpret.
+
+        Returns:
+            the unchanged argument.
+        """
+        return x
 
     def _compute_output_shape(
         self,
