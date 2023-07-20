@@ -22,6 +22,8 @@ import numpy as np
 from qiskit.utils.algorithm_globals import algorithm_globals
 from qiskit.algorithms.optimizers import Optimizer, SPSA, Minimizer
 from qiskit.algorithms.variational_algorithm import VariationalResult
+from sklearn.base import BaseEstimator
+
 from qiskit_machine_learning.utils.loss_functions import KernelLoss, SVCLoss
 
 from qiskit_machine_learning.kernels import TrainableKernel
@@ -44,7 +46,7 @@ class QuantumKernelTrainerResult(VariationalResult):
         self._quantum_kernel = quantum_kernel
 
 
-class QuantumKernelTrainer:
+class QuantumKernelTrainer(BaseEstimator):
     """
     Quantum Kernel Trainer.
     This class provides utility to train quantum kernel feature map parameters.
@@ -89,7 +91,7 @@ class QuantumKernelTrainer:
 
     def __init__(
         self,
-        quantum_kernel: TrainableKernel,
+        quantum_kernel: TrainableKernel | None = None,
         loss: str | KernelLoss | None = None,
         optimizer: Optimizer | Minimizer | None = None,
         initial_point: Sequence[float] | None = None,

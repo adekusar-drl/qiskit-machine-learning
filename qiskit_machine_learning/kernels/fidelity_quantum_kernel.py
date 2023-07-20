@@ -262,3 +262,15 @@ class FidelityQuantumKernel(BaseKernel):
         """Returns the strategy used by this kernel to evaluate kernel matrix elements if duplicate
         samples are found."""
         return self._evaluate_duplicates
+
+    # def get_params(self, deep=True):
+    #     print("FidelityQuantumKernel get_params")
+    #     params = super().get_params()
+    #     params.update({"fidelity": self._fidelity, "evaluate_duplicates": self._evaluate_duplicates})
+    #     return params
+    #
+    # def set_params(self, **params):
+    #     print("FidelityQuantumKernel set_params")
+    #     super().set_params(**params)
+    #     self._fidelity = params.get("fidelity", ComputeUncompute(sampler=Sampler()))
+    #     self._evaluate_duplicates = params.get("evaluate_duplicates", "off_diagonal")

@@ -151,3 +151,16 @@ class BaseKernel(ABC):
         w, v = np.linalg.eig(kernel_matrix)
         m = v @ np.diag(np.maximum(0, w)) @ v.transpose()
         return m.real
+
+    # def get_params(self, deep=True):
+    #     print("Base kernel: get_params")
+    #     return {
+    #         "feature_map": self._feature_map,
+    #         "enforce_psd": self._enforce_psd
+    #     }
+    #
+    # def set_params(self, **params):
+    #     print("Base kernel: set_params")
+    #     self._feature_map = params.get("feature_map", ZZFeatureMap(2)).copy()
+    #     self._enforce_psd = params.get("enforce_psd", True)
+

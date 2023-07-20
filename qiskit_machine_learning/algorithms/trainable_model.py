@@ -18,6 +18,7 @@ from typing import Callable
 import numpy as np
 from qiskit.algorithms.optimizers import Optimizer, SLSQP, OptimizerResult, Minimizer
 from qiskit.utils import algorithm_globals
+from sklearn.base import BaseEstimator
 
 from qiskit_machine_learning import QiskitMachineLearningError
 from qiskit_machine_learning.neural_networks import NeuralNetwork
@@ -32,7 +33,7 @@ from .objective_functions import ObjectiveFunction
 from .serializable_model import SerializableModelMixin
 
 
-class TrainableModel(SerializableModelMixin):
+class TrainableModel(SerializableModelMixin, BaseEstimator):
     """Base class for ML model that defines a scikit-learn like interface for Estimators."""
 
     def __init__(
@@ -298,3 +299,14 @@ class TrainableModel(SerializableModelMixin):
                 jac=function.gradient,
             )
         return optimizer_result
+
+    # def get_params(self, deep=True):
+    #     # neural_network: NeuralNetwork,
+    #     # loss: str | Loss = "squared_error",
+    #     # optimizer: Optimizer | Minimizer | None = None,
+    #     # warm_start: bool = False,
+    #     # initial_point: np.ndarray = None,
+    #     # callback: Callable[[np.ndarray, float], None] | None = None,
+    #
+    #     return
+
