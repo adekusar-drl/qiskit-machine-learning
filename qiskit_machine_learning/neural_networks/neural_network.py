@@ -1,4 +1,4 @@
-# This code is part of Qiskit.
+# This code is part of a Qiskit project.
 #
 # (C) Copyright IBM 2020, 2023.
 #
@@ -10,8 +10,8 @@
 # copyright notice, and modified files need to carry a notice indicating
 # that they have been altered from the originals.
 
-"""A Neural Network abstract class for all (quantum) neural networks within Qiskit's
-machine learning module."""
+"""A Neural Network abstract class for all (quantum) neural networks within Qiskit
+Machine Learning module."""
 
 from __future__ import annotations
 

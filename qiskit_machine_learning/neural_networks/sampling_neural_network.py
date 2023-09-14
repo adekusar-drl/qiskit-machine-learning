@@ -1,6 +1,6 @@
-# This code is part of Qiskit.
+# This code is part of a Qiskit project.
 #
-# (C) Copyright IBM 2020, 2022.
+# (C) Copyright IBM 2020, 2023.
 #
 # This code is licensed under the Apache License, Version 2.0. You may
 # obtain a copy of this license in the LICENSE.txt file in the root directory
@@ -35,8 +35,8 @@ else:
 
 class SamplingNeuralNetwork(NeuralNetwork):
     """
-    A sampling neural network abstract class for all (quantum) neural networks within Qiskit's
-    machine learning module that generate samples instead of (expected) values.
+    A sampling neural network abstract class for all (quantum) neural networks within the
+    Qiskit Machine Learning module that generate samples instead of (expected) values.
     """
 
     def __init__(

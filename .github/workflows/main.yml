@@ -1,4 +1,4 @@
-# This code is part of Qiskit.
+# This code is part of a Qiskit project.
 #
 # (C) Copyright IBM 2021, 2023.
 #
@@ -59,7 +59,7 @@ jobs:
         with:
           os: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
-          terra-main: "false"
+          qiskit-main: "false"
         if: ${{ !startsWith(github.ref, 'refs/heads/stable') && !startsWith(github.base_ref, 'stable/') }}
       - uses: ./.github/actions/install-machine-learning
       - name: Install Dependencies
@@ -204,6 +204,7 @@ jobs:
       - uses: ./.github/actions/install-machine-learning
       - name: Install Dependencies
         run: |
+          pip install jupyter
           pip install torchvision
           sudo apt-get install -y pandoc graphviz
         shell: bash
